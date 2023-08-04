@@ -1,0 +1,11 @@
+#title{
+    text-align: center;
+}
+.todo_item{
+    display: flex;
+    margin: 0px 8px 0px 0px;
+    padding: 2px 2px;
+}
+.todo_item_index{
+    display: flex;
+}
