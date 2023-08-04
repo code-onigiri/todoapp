@@ -3,10 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="index.css">
+    <script src="index.js"></script>
     <title>TodoApp</title>
 </head>
 <body>
-    <h1>TodoApp</h1>
-    
+    <h1 id="title">TodoApp</h1>
+
+    <div>
+        <ul id="todo">
+            <li data-index="0">
+                <div class="todo_item_index"><span class="todo_item">test</span><button class="todo_item">削除</button></div>
+            </li>
+        </ul> 
+    </div>
+    <input type="text" id="input" placeholder="Todo">
+    <button onclick="addTodo()">追加</button>
 </body>
 </html>
