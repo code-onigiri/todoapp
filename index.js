@@ -8,6 +8,15 @@ function addTodo() {
     DOMaddTodo(value, addtododom);
 }
 
+function delTodo(event){
+    //DOMとtodoから削除
+    const liElement = event.target.closest('li');
+    const dataindex = liElement.getAttribute('data-index');
+    todo.splice(dataindex, 1);
+    const deltododom = document.getElementsByClassName('todo_li');
+    deltododom[dataindex].remove();
+}
+
 function DOMaddTodo(value , addtododom){
     // 要素を作成
     const liElement = document.createElement('li');
@@ -24,11 +33,11 @@ function DOMaddTodo(value , addtododom){
     spanElement.textContent = value;
     buttonElement.textContent = '削除';
 
-    //CSSを追加
-    liElement.style.listStyleType = 'disc';
-
     //data-indexを追加
     liElement.dataset.index = todo.length;
+
+    //liのbuttonにonclickを追加
+    buttonElement.addEventListener('click', (event) =>{delTodo(event);});
     
     // 要素の階層を構築
     divElement.appendChild(spanElement);
